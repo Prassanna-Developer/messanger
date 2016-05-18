@@ -8,14 +8,12 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-
 @Path("testDate")
 public class MBWDateResource {
-	
-	
+
 	@GET
-	@Produces("textShortDate")
-	public Date getActualDate(){
+	@Produces(value={MediaType.TEXT_PLAIN,"text/shortDate"})
+	public Date getActualDate() {
 		return Calendar.getInstance().getTime();
 	}
 

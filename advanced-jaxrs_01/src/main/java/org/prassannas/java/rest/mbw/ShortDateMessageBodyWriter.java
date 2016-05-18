@@ -15,7 +15,7 @@ import javax.ws.rs.ext.MessageBodyWriter;
 import javax.ws.rs.ext.Provider;
 
 @Provider
-@Produces("textShortDate")
+@Produces("text/shortDate")
 public class ShortDateMessageBodyWriter implements MessageBodyWriter<Date> {
 
 
