@@ -2,7 +2,7 @@ package org.prassannas.java.rest.client;
 
 
 import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response; 
 
 
 public class MyRestClient {
