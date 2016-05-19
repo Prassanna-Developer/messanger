@@ -1,25 +1,20 @@
+package org.prassannas.java.rest.client;
+
+import java.util.List;
+
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 import org.prassannas.messenger.model.Message;
 
-
-public class InvocationDemoClass {
-
+public class GenericDemo {
+	
 	public static void main(String[] args) {
-System.out.println("InvocationDemoClass.main()");
+		System.out.println("GenericDemo.main()");
 		
-		Invocation builder = prepareMessageForYear(2);
-		Response invoke = builder.invoke();
-		System.out.println(invoke.readEntity(Message.class).getCreated());
-
-	}
-
-	private static Invocation prepareMessageForYear(int year) {
 		Client client = ClientBuilder.newClient();
 		 
 		WebTarget baseTarget = client
@@ -28,9 +23,9 @@ System.out.println("InvocationDemoClass.main()");
 		WebTarget messageTarget = rootTarget.path("messages");
 		
 		
-		return messageTarget.
-		queryParam("year", year).
-		request(MediaType.APPLICATION_JSON).buildGet();
+		List<Message> list = messageTarget.request(MediaType.APPLICATION_JSON).get(new GenericType<List<Message>>(){});
+		
+		System.out.println(list);
 	}
 
 }

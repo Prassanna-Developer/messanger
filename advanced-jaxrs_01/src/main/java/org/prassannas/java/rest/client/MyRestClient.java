@@ -7,7 +7,7 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.koushik.javabrains.messenger.model.Message;
+import org.prassannas.messenger.model.Message;
 
 
 public class MyRestClient {

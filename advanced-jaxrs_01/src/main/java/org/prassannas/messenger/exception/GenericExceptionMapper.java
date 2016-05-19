@@ -1,10 +1,10 @@
-package org.koushik.javabrains.messenger.exception;
+package org.prassannas.messenger.exception;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.ext.ExceptionMapper;
 
-import org.koushik.javabrains.messenger.model.ErrorMessage;
+import org.prassannas.messenger.model.ErrorMessage;
 
 // This class intentionally doesn't have the @Provider annotation.
 // It has been disabled in order to try out other ways of throwing exceptions in JAX-RS
